@@ -11,7 +11,7 @@ MODULE = 'evolutions'
 
 # Commands that are specific to your module
 
-COMMANDS = ['evolutions:generate']
+COMMANDS = ['evolutions:generate', 'evolutions:loadData']
 
 def execute(**kargs):
     command = kargs.get("command")
@@ -27,7 +27,17 @@ def execute(**kargs):
             print "Could not execute the java executable, please make sure the JAVA_HOME environment variable is set properly (the java executable should reside at JAVA_HOME/bin/java). "
             sys.exit(-1)
         sys.exit(0)
-
+    if command == "evolutions:loadData":
+        print "~ Import yml to database"
+        print "~ "
+        java_cmd = app.java_cmd([], None, "play.modules.evolutions.YmlImport", args)
+        try:
+            subprocess.call(java_cmd, env=os.environ)
+        except OSError:
+            print "Could not execute the java executable, please make sure the JAVA_HOME environment variable is set properly (the java executable should reside at JAVA_HOME/bin/java). "
+            sys.exit(-1)
+        print
+       
 
 # This will be executed before any command (new, run...)
 def before(**kargs):
