@@ -55,8 +55,8 @@ public class YmlImport {
             Fixtures.deleteDatabase();
         }
         for (String filename : filenames) {
-            Fixtures.loadModels(filename + ".yml");
-            Logger.info("* Ending import yml " + filename + ".yml");
+            Fixtures.loadModels(filename);
+            Logger.info("* Ending import yml " + filename);
         }
         JPAPlugin.closeTx(false);
 
