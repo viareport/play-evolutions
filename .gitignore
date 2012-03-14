@@ -1,3 +1,9 @@
 *.pyc
 dist/*
 tmp/*
+.classpath
+.project
+.settings/*
+eclipse/*
+modules/*
+lib/play-play-evolutions.jar

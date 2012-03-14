@@ -1,6 +1,5 @@
 package play.modules.evolutions;
 
-import java.beans.PropertyVetoException;
 import java.io.File;
 import java.lang.reflect.Method;
 import java.util.LinkedList;
@@ -10,6 +9,7 @@ import play.Logger;
 import play.Play;
 import play.db.DBPlugin;
 import play.db.jpa.JPAPlugin;
+import play.modules.evolutions.multitenant.ContextAdapterInterface;
 import play.test.Fixtures;
 
 
@@ -17,6 +17,8 @@ public class YmlImport {
 
     public static void main(String[] args) throws Exception {
 
+        //Thread.currentThread().sleep(5000);
+        
         // we retrieve parameters
         List<String> filenames = new LinkedList<String>();
         Boolean reset = false;
@@ -34,12 +36,20 @@ public class YmlImport {
         if (filenames.size() == 0 ) {
             filenames.add("data");
         }
-
+        
         // initiate play! framework
         File root = new File(System.getProperty("application.path"));
         Play.init(root, System.getProperty("play.id", ""));
         Thread.currentThread().setContextClassLoader(Play.classloader);
         Class c = Play.classloader.loadClass("play.modules.evolutions.YmlImport");
+        
+        
+        ContextAdapterInterface contextAdapter = (ContextAdapterInterface)Play.classloader.getAssignableClasses(ContextAdapterInterface.class).get(0).newInstance();
+        
+        contextAdapter.setClientName("Centre d'assistance Viareport");
+        contextAdapter.setUserLogin("admin");
+        
+        
         Method m = c.getMethod("mainWork", List.class, Boolean.class);
         m.invoke(c.newInstance(), filenames, reset);
         System.exit(0);
