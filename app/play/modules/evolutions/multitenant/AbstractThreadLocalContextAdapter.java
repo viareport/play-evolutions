@@ -6,8 +6,8 @@ import multitenant.context.MultiTenantContext;
 public class AbstractThreadLocalContextAdapter extends
         AbstractThreadLocalContext implements ContextAdapterInterface {
 
-    public void setClientName(String clientName) {
-        ((StaticContext) MultiTenantContext.current()).setClientName(clientName);
+    public void setClientCode(String clientCode) {
+        ((StaticContext) MultiTenantContext.current()).setClientCode(clientCode);
     }
     
     public void setUserLogin(String userLogin) {

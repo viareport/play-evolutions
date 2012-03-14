@@ -13,7 +13,7 @@ public class StaticContext extends MultiTenantContext {
     @Override
     public Client getClient() {
         if (client.id == null) {
-            client = Client.findByName(client.name).first();
+            client = Client.findByCode(client.code);
         }
         return client;
     }
@@ -30,9 +30,9 @@ public class StaticContext extends MultiTenantContext {
         current.set(null);
     }
 
-    public void setClientName(String clientName) {
+    public void setClientCode(String clientCode) {
         client = new Client();
-        client.name = clientName;
+        client.code = clientCode;
     }
 
     public void setUserLogin(String userLogin) {

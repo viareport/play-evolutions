@@ -2,8 +2,8 @@ self: play -> play-evolutions 0.2
 
 require:
     - play 1.2.4
-    - multitenant -> multitenant 0.1
-    - accesscontrol -> accesscontrol [0.2.5,)
+    - multitenant -> multitenant [0.1,)
+    - accesscontrol -> accesscontrol 0.2.6
     - crudtools -> crudtools [0.1,)
 
 repositories:
@@ -15,7 +15,8 @@ repositories:
                  artifact:  "http://devtoulouse.viareportdomain.com/repository/[module]-[revision].zip" 
              - inativLocal:
                  type: local
-                 artifact : ${application.path}/../../inativ_plugins/[module]
+                 descriptor: ${application.path}/../[module]/conf/dependencies.yml
+                 artifact : ${application.path}/../[module]
         contains:
              - multitenant
              - accesscontrol
