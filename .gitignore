@@ -6,4 +6,4 @@ tmp/*
 .settings/*
 eclipse/*
 modules/*
-lib/play-play-evolutions.jar
+lib/*

@@ -1,10 +1,10 @@
-self: play -> play-evolutions 0.2
+self: inativ -> play-evolutions 0.2.1
 
 require:
     - play 1.2.4
-    - multitenant -> multitenant [0.1,)
-    - accesscontrol -> accesscontrol 0.2.6
-    - crudtools -> crudtools [0.1,)
+    - inativ -> multitenant [0.1.2,)
+    - inativ -> accesscontrol [0.2.7,)
+    - inativ -> crudtools [0.1,)
 
 repositories:
     - inativ:
@@ -18,7 +18,5 @@ repositories:
                  descriptor: ${application.path}/../[module]/conf/dependencies.yml
                  artifact : ${application.path}/../[module]
         contains:
-             - multitenant
-             - accesscontrol
-             - crudtools
+             - inativ -> *
     
