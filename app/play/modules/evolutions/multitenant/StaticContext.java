@@ -1,15 +1,14 @@
 package play.modules.evolutions.multitenant;
 
-import play.Logger;
-import models.Client;
 import models.User;
+import models.multitenant.Client;
 import multitenant.context.MultiTenantContext;
 
 public class StaticContext extends MultiTenantContext {
 
     private static Client client;
     private static User user;
-    
+
     @Override
     public Client getClient() {
         if (client.id == null) {
@@ -25,7 +24,7 @@ public class StaticContext extends MultiTenantContext {
         }
         return user;
     }
-    
+
     public static void reset() {
         current.set(null);
     }
