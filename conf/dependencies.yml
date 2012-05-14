@@ -1,8 +1,8 @@
-self: inativ -> play-evolutions 0.2.2
+self: inativ -> play-evolutions 0.2.3
 
 require:
     - play 1.2.4
-    - inativ -> inativ_play_utils 0.1
+    - inativ -> inativ_play_utils 0.1.1
 
 repositories:
     - inativ:

@@ -1,6 +1,6 @@
 package play.modules.evolutions.multitenant;
 
-import models.User;
+import models.accesscontrol.User;
 import models.multitenant.Client;
 import multitenant.context.MultiTenantContext;
 
