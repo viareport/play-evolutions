@@ -2,9 +2,7 @@ self: inativ -> play-evolutions 0.2.2
 
 require:
     - play 1.2.4
-    - inativ -> multitenant [0.2.3,)
-    - inativ -> accesscontrol [0.3.1,)
-    - inativ -> crudtools [0.1,)
+    - inativ -> inativ_play_utils 0.1
 
 repositories:
     - inativ:
