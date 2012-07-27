@@ -1,8 +1,8 @@
-self: inativ -> play-evolutions 1.0.0-2
+self: inativ -> play-evolutions 1.0.0-3
 
 require:
     - play 1.2.5-viareport
-    - inativ -> inativ_play_utils 1.0.0-53
+    - inativ -> inativ_play_utils 1.0.0-60
 
 repositories:
     - inativ:
@@ -11,11 +11,11 @@ repositories:
              - inativCentral:
                  type: http
                  descriptor: "http://devtoulouse.viareportdomain.com/repository/[module]/[revision]/dependencies.yml"
-                 artifact:  "http://devtoulouse.viareportdomain.com/repository/[module]/[revision]/[module]-[revision].zip" 
+                 artifact:  "http://devtoulouse.viareportdomain.com/repository/[module]/[revision]/[module]-[revision].zip"
              - inativLocal:
                  type: local
                  descriptor: ${application.path}/../[module]/conf/dependencies.yml
                  artifact : ${application.path}/../[module]
         contains:
              - inativ -> *
-    
+
