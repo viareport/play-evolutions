@@ -1,8 +1,8 @@
-self: inativ -> play-evolutions 1.0.0-6
+self: inativ -> play-evolutions 1.0.0-7
 
 require:
     - play 1.2.5-viareport
-    - inativ -> inativ_play_utils 1.0.0-94
+    - inativ -> inativ_play_utils 1.0.0-95
 
 repositories:
     - inativ:
