@@ -2,7 +2,7 @@ self: inativ -> play-evolutions 1.0.0-12
 
 require:
     - play 1.2.5-viareport
-    - inativ -> inativ_play_utils 1.0.0-111
+    - inativ -> inativ_play_utils 1.0.0-112
 
 repositories:
     - inativ:
