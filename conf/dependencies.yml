@@ -2,4 +2,4 @@ self: inativ -> play-evolutions 1.0.1
 
 require:
     - play [1.2.5,)
-    - inativ -> inativ_play_utils 1.0.1-dev
+    - inativ -> inativ_play_utils 1.1.0-dev
